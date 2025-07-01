@@ -9,7 +9,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Header() {
   return (
@@ -29,8 +28,6 @@ export function Header() {
           <Button variant="ghost" size="icon">
             <Bell className="w-4 h-4" />
           </Button>
-
-          <ThemeToggle />
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>

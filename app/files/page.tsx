@@ -13,7 +13,7 @@ interface FileItem {
   format?: string
 }
 
-export default function DashboardPage() {
+export default function FilesPage() {
   const [selectedFile, setSelectedFile] = useState<FileItem | null>(null)
 
   const handleFileSelect = (file: FileItem) => {
@@ -25,20 +25,19 @@ export default function DashboardPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold">Dashboard</h1>
-        <p className="text-muted-foreground">Manage your media files and preview content</p>
+        <h1 className="text-3xl font-bold">File Browser</h1>
+        <p className="text-muted-foreground">Browse and manage your media files</p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-200px)]">
         {/* File Browser */}
         <div className="space-y-4">
-          <h2 className="text-2xl font-semibold">File Browser</h2>
           <FileBrowser onFileSelect={handleFileSelect} />
         </div>
 
         {/* Video Player */}
         <div className="space-y-4">
-          <h2 className="text-2xl font-semibold">Media Preview</h2>
+          <h2 className="text-xl font-semibold">Media Preview</h2>
           <VideoPlayer
             fileName={selectedFile?.name}
             fileSize={selectedFile?.size}

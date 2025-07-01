@@ -1,16 +1,7 @@
-"use client"
-
 import { Button } from "@/components/ui/button"
-import { Home, FolderOpen, Upload, Settings, BarChart3, Users, HardDrive, Key } from "lucide-react"
+import { Home, FolderOpen, Upload, Settings, BarChart3, Users, HardDrive } from "lucide-react"
 
-type Page = "files" | "analytics" | "api-keys" | "upload" | "users" | "settings"
-
-interface SidebarProps {
-  currentPage: Page
-  onPageChange: (page: Page) => void
-}
-
-export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
+export function Sidebar() {
   return (
     <div className="w-64 bg-card border-r h-full">
       <div className="p-6">
@@ -22,65 +13,32 @@ export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
         </div>
 
         <nav className="space-y-2">
-          <Button
-            variant={currentPage === "files" ? "default" : "ghost"}
-            className="w-full justify-start"
-            onClick={() => onPageChange("files")}
-          >
+          <Button variant="ghost" className="w-full justify-start">
             <Home className="w-4 h-4 mr-3" />
             Dashboard
           </Button>
 
-          <Button
-            variant={currentPage === "files" ? "default" : "ghost"}
-            className="w-full justify-start"
-            onClick={() => onPageChange("files")}
-          >
+          <Button variant="default" className="w-full justify-start">
             <FolderOpen className="w-4 h-4 mr-3" />
             File Browser
           </Button>
 
-          <Button
-            variant={currentPage === "upload" ? "default" : "ghost"}
-            className="w-full justify-start"
-            onClick={() => onPageChange("upload")}
-          >
+          <Button variant="ghost" className="w-full justify-start">
             <Upload className="w-4 h-4 mr-3" />
             Upload
           </Button>
 
-          <Button
-            variant={currentPage === "analytics" ? "default" : "ghost"}
-            className="w-full justify-start"
-            onClick={() => onPageChange("analytics")}
-          >
+          <Button variant="ghost" className="w-full justify-start">
             <BarChart3 className="w-4 h-4 mr-3" />
             Analytics
           </Button>
 
-          <Button
-            variant={currentPage === "api-keys" ? "default" : "ghost"}
-            className="w-full justify-start"
-            onClick={() => onPageChange("api-keys")}
-          >
-            <Key className="w-4 h-4 mr-3" />
-            API Keys
-          </Button>
-
-          <Button
-            variant={currentPage === "users" ? "default" : "ghost"}
-            className="w-full justify-start"
-            onClick={() => onPageChange("users")}
-          >
+          <Button variant="ghost" className="w-full justify-start">
             <Users className="w-4 h-4 mr-3" />
             Users
           </Button>
 
-          <Button
-            variant={currentPage === "settings" ? "default" : "ghost"}
-            className="w-full justify-start"
-            onClick={() => onPageChange("settings")}
-          >
+          <Button variant="ghost" className="w-full justify-start">
             <Settings className="w-4 h-4 mr-3" />
             Settings
           </Button>
